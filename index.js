@@ -1,14 +1,13 @@
 const express = require("express")
 const body = require("body-parser")
 const mongoose = require("mongoose")
-const mongodb = require("mongodb")
 const app=express()
 app.set('view engine', 'ejs');
 app.use(body.urlencoded({extended:true}))
 app.use(express.static("public"))
 
 
-mongoose.connect("mongodb+srv://shashank1321:todo@1321@cluster0.vufefye.mongodb.net/?retryWrites=true&w=majority",{useNewUrlParser:true})
+mongoose.connect("mongodb+srv://shashank1321:todo@1321@cluster0.vufefye.mongodb.net/tododb",{useNewUrlParser:true})
 
 //schema
 const todoschema = new mongoose.Schema({

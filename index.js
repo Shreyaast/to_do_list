@@ -7,7 +7,7 @@ app.use(body.urlencoded({extended:true}))
 app.use(express.static("public"))
 
 
-mongoose.connect("mongodb+srv://shashank1321:todo@1321@cluster0.vufefye.mongodb.net/tododb",{useNewUrlParser:true})
+mongoose.connect("mongodb+srv://shashank1321:<password>@cluster0.vufefye.mongodb.net/tododb",{useNewUrlParser:true})
 
 //schema
 const todoschema = new mongoose.Schema({
@@ -29,7 +29,7 @@ var list=[]
 
 app.get("/",function(req,res){
     todomodel.find().then((result) => {
-        res.render('index',{task:result})
+        res.render('index',{tasks:result})
     }).catch((err) => {
         console.log(err)
     });

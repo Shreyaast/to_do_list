@@ -29,7 +29,7 @@ var list=[]
 
 app.get("/",function(req,res){
     todomodel.find().then((result) => {
-        res.render('index',{tasks:result})
+        res.render('index',{task:result})
     }).catch((err) => {
         console.log(err)
     });
